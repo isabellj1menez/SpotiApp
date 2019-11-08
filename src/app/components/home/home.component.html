@@ -1,0 +1,14 @@
+<app-loading *ngIf="loading">
+</app-loading>
+<div *ngIf="!loading" class="card-columns">
+    <div *ngFor="let release of NewReleases" class="card">
+        <img [src]="release.images[1].url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{release.name}}</h5>
+            <p class="card-text">
+                <span *ngFor="let artist of release.artists" class="badge-pill bg-danger">{{artist.name}} </span>
+            </p>
+            <p class="card-text"><small class="text-muted">Release date: {{release.release_date}}</small></p>
+        </div>
+    </div>
+</div>
